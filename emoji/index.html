@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji</title>
+    <style>
+        .content {
+            max-width: 500px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="content">
+        <h1>Emoji</h1>
+
+        <img id="imagen" src="./images/smile.png" alt="delivery">
+
+    </main>
+
+    <script>
+
+        var imagen = document.getElementById('imagen');
+
+        imagen.addEventListener("click", function( event ) {
+            event.preventDefault();
+            imagen.setAttribute('src', "./images/sad.png")
+        });
+
+    </script>
+</body>
+
+</html>

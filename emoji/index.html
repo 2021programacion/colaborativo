@@ -19,7 +19,9 @@
     <main class="content">
         <h1>Emoji</h1>
 
-        <img id="imagen" src="./images/smile.png" alt="delivery">
+        <button onclick="cambiarEmoji()">
+            <img id="imagen" src="./images/smile.png" alt="delivery">
+        </button>
 
     </main>
 
@@ -27,10 +29,18 @@
 
         var imagen = document.getElementById('imagen');
 
-        imagen.addEventListener("click", function( event ) {
+        var sad = "./images/sad.png";
+        var happy = "./images/smile.png";
+
+        function cambiarEmoji() {
             event.preventDefault();
-            imagen.setAttribute('src', "./images/sad.png")
-        });
+            var source = imagen.getAttribute('src');
+            if (source === happy) {
+                imagen.setAttribute('src', sad);
+            } else {
+                imagen.setAttribute('src', happy);
+            }
+        }
 
     </script>
 </body>

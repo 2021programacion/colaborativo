@@ -31,15 +31,28 @@
 
         var sad = "./images/sad.png";
         var happy = "./images/smile.png";
+        var thinking = "./images/thinking.png";
 
         function cambiarEmoji() {
             event.preventDefault();
             var source = imagen.getAttribute('src');
-            if (source === happy) {
+            /* if (source === happy) {
                 imagen.setAttribute('src', sad);
             } else {
                 imagen.setAttribute('src', happy);
+            } */
+            switch (source) {
+                case happy:
+                    imagen.setAttribute('src', sad);
+                    break;
+                case sad: 
+                    imagen.setAttribute('src', thinking);
+                    break;
+                case thinking:
+                    imagen.setAttribute('src', happy);
+                    break;
             }
+
         }
 
     </script>

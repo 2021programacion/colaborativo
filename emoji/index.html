@@ -36,11 +36,7 @@
         function cambiarEmoji() {
             event.preventDefault();
             let source = imagen.getAttribute('src');
-            /* if (source === happy) {
-                imagen.setAttribute('src', sad);
-            } else {
-                imagen.setAttribute('src', happy);
-            } */
+           
             switch (source) {
                 case happy:
                     imagen.setAttribute('src', sad);

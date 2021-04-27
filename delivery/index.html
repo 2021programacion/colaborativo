@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery</title>
+    <style>
+        .content {
+            max-width: 500px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="content">
+        <h1>Delivery</h1>
+
+        <p>Para ver las distintas modalidades de delivery hace clic en la imagen </p>
+
+        <div id="tipo">
+            <h2 id="titulo">Moto</h2>
+            <img id="imagen" src="./images/moto.png" alt="delivery">
+            <p id="detalle">Ideal para cuando hay una distancia de hasta 8Km </p>
+        </div>
+    </main>
+
+    <script>
+        var clics = 0;
+        var deliveries = [
+            {
+                nombre: 'Moto',
+                imagen: "./images/moto.png",
+                texto: "Ideal para cuando hay una distancia de hasta 8Km "
+            },
+            {
+                nombre: 'Bici',
+                imagen: "./images/bici.png",
+                texto: "Ideal para cuando hay una distancia de hasta 2Km "
+            },
+            {
+                nombre: 'Camion',
+                imagen: "./images/camion.png",
+                texto: "Ideal para distancias enormes"
+            }
+        ];
+
+        function cambiarDelivery(indice) {
+            if (indice > 3) {
+                indice = indice % 3;
+            }
+            
+            var imagen = document.getElementById('imagen');
+            var titulo = document.getElementById('titulo');
+            var texto = document.getElementById('detalle');
+
+            imagen.setAttribute('src', deliveries[indice].imagen);
+            titulo.innerHTML = deliveries[indice].nombre;
+            texto.innerHTML = deliveries[indice].texto;
+
+        }
+
+        var tipo = document.getElementById('tipo');
+
+        
+        tipo.addEventListener("click", function( event ) {
+            event.preventDefault();
+            clics++;
+            cambiarDelivery(clics);
+        });
+
+    </script>
+</body>
+
+</html>

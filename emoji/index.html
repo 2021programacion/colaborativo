@@ -27,15 +27,15 @@
 
     <script>
 
-        var imagen = document.getElementById('imagen');
+        let imagen = document.getElementById('imagen');
 
-        var sad = "./images/sad.png";
-        var happy = "./images/smile.png";
-        var thinking = "./images/thinking.png";
+        let sad = "./images/sad.png";
+        let happy = "./images/smile.png";
+        let thinking = "./images/thinking.png";
 
         function cambiarEmoji() {
             event.preventDefault();
-            var source = imagen.getAttribute('src');
+            let source = imagen.getAttribute('src');
             /* if (source === happy) {
                 imagen.setAttribute('src', sad);
             } else {
